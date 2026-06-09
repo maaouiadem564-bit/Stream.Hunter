@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: stream-hunter
+    env: node
+    plan: starter
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: PORT
+        value: 3000
+      - key: CACHE_TTL_MINUTES
+        value: 30
+      - key: MAX_BROWSERS
+        value: 3
+      - key: LOG_LEVEL
+        value: info
+      - key: TMDB_API_KEY
+        sync: false
